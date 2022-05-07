@@ -24,9 +24,9 @@
               <div class="col-9">
                 <input
                   type="search"
-                  placeholder="Type a city"
+                  placeholder="Search a city"
                   class="form-control"
-                  id="city-input"
+                  id="search-input"
                   autocomplete="off"
                 />
               </div>
@@ -35,12 +35,15 @@
                   type="Submit"
                   value="Search"
                   class="btn btn-primary w-100"
+                  id="search-button"
                 />
               </div>
             </div>
           </form>
           <div class="overview">
-            <h1 id="city"></h1>
+            <h1>
+              <span id="city">New York</span>
+            </h1>
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
