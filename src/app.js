@@ -1,3 +1,4 @@
+//Date
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -23,6 +24,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+//Temperature
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -46,6 +49,7 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+//Find City
 
 function searchCity(city) {
   let apiKey = "0027f9b325e100e5458b8974e9a9f809";
@@ -58,6 +62,8 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#search-input");
   search(cityInputElement.value);
 }
+
+//Converting Units
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -78,10 +84,11 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+//Search Bar
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 searchCity("New York");
