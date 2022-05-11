@@ -28,7 +28,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
+  let cityInputElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -51,17 +51,46 @@ function displayTemperature(response) {
 }
 //Find City
 
-function searchCity(city) {
+function searchCityName(city) {
   let apiKey = "0027f9b325e100e5458b8974e9a9f809";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
+//Show City
+
+function showCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input");
+  let cityName = document.querySelector("#city");
+  cityName.innerHTML = `${city.value}`;
+  searchCityName(city.value);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#search-input");
-  search(cityInputElement.value);
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
 }
+
+//Find Geolocation
+
+function showPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentPosition);
+}
+
+function searchCurrentPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = `metric`;
+  let apiKey = "0027f9b325e100e5458b8974e9a9f809";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //Converting Units
 
@@ -87,8 +116,11 @@ let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
+let celsiuslink = document.querySelector("#celsius-link");
+celsiuslink.addEventListener("click", displayCelsiusTemperature);
+
 //Search Bar
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", search);
 
 searchCity("New York");

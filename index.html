@@ -26,7 +26,7 @@
                   type="search"
                   placeholder="Search a city"
                   class="form-control"
-                  id="search-input"
+                  id="city-input"
                   autocomplete="off"
                 />
               </div>
@@ -36,14 +36,18 @@
                   value="Search"
                   class="btn btn-primary w-100"
                   id="search-button"
-                />
+                />  
               </div>
             </div>
+            <div>
           </form>
           <div class="overview">
             <h1>
               <span id="city">New York</span>
             </h1>
+            <h2>
+              <span id="current-time"></span>
+            </h2>
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
@@ -71,6 +75,7 @@
           </div>
         </div>
         <small>
+          <span>
           <a
             href="https://github.com/michellechan40/vanilla-weather-app"
             target="_blank"
@@ -78,6 +83,7 @@
           >
           by Michelle Chan
         </small>
+          </span>
       </div>
     </div>
     <script src="src/app.js"></script>

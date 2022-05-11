@@ -1,5 +1,7 @@
 body {
   font-family: arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
 }
 
 h1 {
@@ -27,6 +29,17 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
+}
+
+button {
+  color: #ffffff;
+  background-color: #dcb5ff;
+  cursor: pointer;
+  transition: ease-in-out 150ms;
+}
+
+button:hover {
+  color: #ffffff;
 }
 
 .weather-app-wrapper {
