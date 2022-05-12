@@ -34,7 +34,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = newDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -53,15 +53,13 @@ function searchCityName(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = cityInputElement.value;
   searchCityName(cityInputElement.value);
 }
 
 //Search Bar
 
-let form = document.querySelector("search-form");
-form.addEventListener("submit", searchCityName);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 //Converting Units
 
