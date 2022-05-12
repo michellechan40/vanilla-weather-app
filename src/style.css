@@ -1,15 +1,30 @@
 body {
-  font-family: arial, sans-serif;
+  font-family: "Beau Rivage", cursive;
+  font-family: "Inconsolata", monospace;
   margin: 0 auto;
   padding: 0;
 }
 
 h1 {
+  font-family: "Beau Rivage", cursive;
+  font-family: "Inconsolata", monospace;
   color: #878787;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Beau Rivage", cursive;
+  font-family: "Inconsolata", monospace;
+  font-size: 22px;
+}
+
+h3 {
+  font-family: "Beau Rivage", cursive;
+  font-family: "Inconsolata", monospace;
+  font-size: 22px;
 }
 
 ul {
@@ -43,6 +58,8 @@ button:hover {
 }
 
 .weather-app-wrapper {
+  font-family: "Beau Rivage", cursive;
+  font-family: "Inconsolata", monospace;
   max-width: 600px;
   margin: 30px auto;
 }
