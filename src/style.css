@@ -8,8 +8,8 @@ body {
 h1 {
   font-family: "Beau Rivage", cursive;
   font-family: "Inconsolata", monospace;
-  color: #878787;
-  font-size: 24px;
+  color: #000000;
+  font-size: 28px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
@@ -24,6 +24,7 @@ h2 {
 h3 {
   font-family: "Beau Rivage", cursive;
   font-family: "Inconsolata", monospace;
+  text-transform: capitalize;
   font-size: 22px;
 }
 
