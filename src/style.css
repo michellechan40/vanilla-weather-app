@@ -52,6 +52,7 @@ li:first-letter {
 
 button {
   color: #ffffff;
+  background: #885df1;
   background-color: #dcb5ff;
   cursor: pointer;
   transition: ease-in-out 150ms;
