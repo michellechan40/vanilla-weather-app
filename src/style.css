@@ -46,6 +46,10 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+.description:first-letter {
+  text-transform: capitalize;
+}
+
 button {
   color: #ffffff;
   background-color: #dcb5ff;
